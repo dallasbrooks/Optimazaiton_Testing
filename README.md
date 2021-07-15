@@ -1,2 +1,2 @@
-# Optimazaiton_Testing
+# Optimazation Testing
 A place to practice creating more efficient algorithms for simple problems
