@@ -1,14 +1,13 @@
 #include <stdio.h>
 
 void printArray(int arr[], int n);
+void swap(int *a, int *b);
 
 void bubbleSort(int arr[], int n){
     for(int a = 0; a < n-1; a++){
         for(int b = a+1; b < n; b++){
             if(arr[a] > arr[b]){
-                int t = arr[b];
-                arr[b] = arr[a];
-                arr[a] = t;
+		swap(&arr[a], &arr[b]);
             }
             printArray(arr, n);
         }
@@ -28,4 +27,10 @@ void printArray(int arr[], int n){
 		printf("%d ", arr[a]);
 	}
 	printf("\n");
+}
+
+void swap(int *a, int *b){
+	int t = *a;
+	*a = *b;
+	*b = t;
 }
