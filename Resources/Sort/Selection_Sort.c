@@ -1,7 +1,6 @@
 #include <stdio.h>
 
 void printArray(int arr[], int n);
-void swap(int *a, int *b);
 
 void selectionSort(int arr[], int n){
 	int min = 0;
@@ -12,7 +11,9 @@ void selectionSort(int arr[], int n){
 				min = b;
 			}
 		}
-		swap(&arr[min], &arr[a]);
+		int t = arr[min];
+		arr[min] = arr[a];
+		arr[a] = t;
 		printArray(arr, n);
 	}
 }
@@ -30,10 +31,4 @@ void printArray(int arr[], int n){
 		printf("%d ", arr[a]);
 	}
 	printf("\n");
-}
-
-void swap(int *a, int *b){
-	int t = *a;
-	*a = *b;
-	*b = t;
 }
