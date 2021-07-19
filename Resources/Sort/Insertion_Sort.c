@@ -3,15 +3,15 @@
 void printArray(int arr[], int n);
 
 void insertionSort(int arr[], int n){
-	int val = 0;
+	int min = 0;
 	for(int a = 1; a < n; a++){
 		min = arr[a];
 		int b = a-1;
-		while(b >= 0 && arr[b] > val){
+		while(b >= 0 && arr[b] > min){
 			arr[b+1] = arr[b];
 			b--;
 		}
-		arr[b+1] = val;
+		arr[b+1] = min;
 		printArray(arr, n);
 	}
 }
