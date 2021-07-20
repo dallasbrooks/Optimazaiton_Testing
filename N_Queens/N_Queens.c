@@ -4,6 +4,7 @@
 #define Queens 4
 
 void printBoard(int board[Queens][Queens]);
+void showStep(int board[Queens][Queens], int row, int col);
 bool isSafe(int board[Queens][Queens], int row, int col);
 
 bool solveBoard(int board[Queens][Queens], int col){
@@ -11,6 +12,7 @@ bool solveBoard(int board[Queens][Queens], int col){
         return true;
     }
     for(int a = 0; a < Queens; a++){
+        showStep(board, a, col);
         if(isSafe(board, a, col)){
             board[a][col] = 1;
             if(solveBoard(board, col+1)){
@@ -66,4 +68,10 @@ void printBoard(int arr[Queens][Queens]){
         printf("\n");
     }
     printf("\n");
+}
+
+void showStep(int board[Queens][Queens], int row, int col){
+    board[row][col] = 1;
+    printBoard(board);
+    board[row][col] = 0;
 }
