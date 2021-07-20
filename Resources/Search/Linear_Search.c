@@ -23,7 +23,6 @@ int main(){
 	}else{
 		printf("Did not find %d\n", x);
 	}
-	
 	return 0;
 }
 
