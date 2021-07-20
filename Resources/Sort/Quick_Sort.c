@@ -5,12 +5,13 @@ void swap(int *a, int *b);
 int partition(int arr[], int l, int h);
 
 void quickSort(int arr[], int l, int h){
-	printArray(arr, l+1);
-	if(l < h){
-		int part = partition(arr, l, h);
-		quickSort(arr, l, part-1);
-		quickSort(arr, part+1, h);
+	if(l >= h){
+		return;
 	}
+	printArray(arr, l+1);
+	int part = partition(arr, l, h);
+	quickSort(arr, l, part-1);
+	quickSort(arr, part+1, h);
 }
 
 int main(){
