@@ -4,14 +4,14 @@ void printArray(int arr[], int n);
 void swap(int *a, int *b);
 
 void bubbleSort(int arr[], int n){
-    for(int a = 0; a < n-1; a++){
-        for(int b = a+1; b < n; b++){
-            if(arr[a] > arr[b]){
-		swap(&arr[a], &arr[b]);
-		printArray(arr, n);
-            }
-        }
-    }
+	for(int a = 0; a < n-1; a++){
+		for(int b = 0; b < n-a-1; b++){
+			if(arr[b] > arr[b+1]){
+				swap(&arr[b], &arr[b+1]);
+				printArray(arr, n);
+			}
+		}
+	}
 }
 
 int main(){
