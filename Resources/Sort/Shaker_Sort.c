@@ -4,17 +4,29 @@ void printArray(int arr[], int n);
 void swap(int *a, int *b);
 
 void shakerSort(int arr[], int n){
-    for(int a = 1; a < n/2; a++){
-        for(int b = a-1; b < n-a; b++){
-            if(arr[b] > arr[b+1]){
-		        swap(&arr[b], &arr[b+1]);
+    int swapped = 1;
+    int start = 0;
+    int end = n-1;
+    while(swapped){
+        swapped = 0;
+        for(int a = start; a < end; a++){
+            if(arr[a] > arr[a+1]){
+                swap(&arr[a], &arr[a+1]);
+                swapped = 1;
             }
         }
-        for(int b = n-a-1; b >= a; b--){
-            if(arr[b] < arr[b-1]){
-		        swap(&arr[b], &arr[b-1]);
+        if(!swapped){
+            break;
+        }
+        swapped = 0;
+        end--;
+        for(int a = end-1; a >= start; a--){
+            if(arr[a] > arr[a+1]){
+                swap(&arr[a], &arr[a+1]);
+                swapped = 1;
             }
         }
+        start++;
         printArray(arr, n);
     }
 }
