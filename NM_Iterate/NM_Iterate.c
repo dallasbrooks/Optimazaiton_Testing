@@ -9,20 +9,17 @@ int arr[N] = {0};
 void printArray(int k);
 
 void iterate(int count[]){
-	for(int a = 0; a < N; a++){
+	for(int a = 0; a < N; a++) {
 		arr[a] = count[a]+1;
 	}
 	printArray(0);
 	count[N-1]++;
-	for(int a = N-1; a >= 0; a--){
-		if(count[a] == M){
-			if(a > 0){
-				count[a] = 0;
-				count[a-1]++;
-			}else{
-				return;
-			}
+	for(int a = N-1; a >= 0 && count[a] == M; a--){
+		if(a == 0){
+			return;
 		}
+		count[a] = 0;
+		count[a-1]++;
 	}
 	iterate(count);
 }
@@ -39,5 +36,5 @@ void printArray(int k){
 		return;
 	}
 	printf("%d ", arr[k]);
-	printArray(k+1);
+	printArray(k + 1);
 }
