@@ -10,16 +10,16 @@ void printArray(int k);
 
 void iterate(int count[]){
 	for(int a = 0; a < N; a++) {
-		arr[a] = count[a]+1;
+		arr[a] = count[N-1-a]+1;
 	}
 	printArray(0);
-	count[N-1]++;
-	for(int a = N-1; a >= 0 && count[a] == M; a--){
-		if(a == 0){
+	count[0]++;
+	for(int a = 0; a < N && count[a] == M; a++){
+		if(a == N-1){
 			return;
 		}
 		count[a] = 0;
-		count[a-1]++;
+		count[a+1]++;
 	}
 	iterate(count);
 }
