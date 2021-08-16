@@ -9,7 +9,7 @@ int arr[N] = {0};
 void printArray(int k);
 
 void iterate(int count[]){
-	for(int a = 0; a < N; a++) {
+	for(int a = 0; a < N; a++){
 		arr[a] = count[N-1-a]+1;
 	}
 	printArray(0);
@@ -36,5 +36,5 @@ void printArray(int k){
 		return;
 	}
 	printf("%d ", arr[k]);
-	printArray(k + 1);
+	printArray(k+1);
 }
