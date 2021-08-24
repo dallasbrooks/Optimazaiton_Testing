@@ -25,12 +25,7 @@ bool solveBoard(int board[Queens][Queens], int col){
 }
 
 int main(){
-    int board[Queens][Queens];
-    for(int a = 0; a < Queens; a++){
-        for(int b = 0; b < Queens; b++){
-            board[a][b] = 0;
-        }
-    }
+    int board[Queens][Queens] = {0};
     if(solveBoard(board, 0) == false){
         printf("No Solution\n");
         return 0;
