@@ -43,9 +43,9 @@ int main(){
 	};
 	if(solveSuduko(board, 0, 0)){
 		printBoard(board);
-		return 0;
-	}
-	printf("No Solution\n");
+	}else{
+    printf("No Solution\n");
+  }
 	return 0;
 }
 
