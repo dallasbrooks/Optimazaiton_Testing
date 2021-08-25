@@ -3,9 +3,8 @@
 void printArray(int arr[], int n);
 
 void insertionSort(int arr[], int n){
-	int min = 0;
 	for(int a = 1; a < n; a++){
-		min = arr[a];
+		int min = arr[a];
 		int b = a-1;
 		while(b >= 0 && arr[b] > min){
 			arr[b+1] = arr[b];
