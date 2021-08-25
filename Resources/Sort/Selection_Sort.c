@@ -4,9 +4,8 @@ void printArray(int arr[], int n);
 void swap(int *a, int *b);
 
 void selectionSort(int arr[], int n){
-	int min = 0;
 	for(int a = 0; a < n-1; a++){
-		min = a;
+		int min = a;
 		for(int b = a+1; b < n; b++){
 			if(arr[b] < arr[min]){
 				min = b;
