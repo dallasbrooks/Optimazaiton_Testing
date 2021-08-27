@@ -4,7 +4,7 @@ void printArray(int arr[], int n);
 void swap(int *a, int *b);
 
 void recursiveBubbleSort(int arr[], int k, int n){
-	if(n <= 1){
+	if(n <= 0){
 		return;
 	}else if(k >= n){
 		return recursiveBubbleSort(arr, 0, n-1);
