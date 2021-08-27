@@ -10,7 +10,7 @@ void swap(int *a, int *b);
 int isSorted(int arr[], int k, int n);
 
 void bogoSort(int arr[], int n){
-	for(int a = 0; a < n; a++){
+	for(int a = 0; a < n/2; a++){
 		swap(&arr[a], &arr[rand()%n]);
 	}
 	return isSorted(arr, 0, n) ? NULL : bogoSort(arr, n);
