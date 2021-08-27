@@ -9,7 +9,7 @@ void recursiveBubbleSort(int arr[], int k, int n){
 	}else if(k >= n){
 		return recursiveBubbleSort(arr, 0, n-1);
 	}
-	if(arr[k] > arr[k+1]){
+	if(k+1 < n && arr[k] > arr[k+1]){
 		swap(&arr[k], &arr[k+1]);
 	}
 	recursiveBubbleSort(arr, k+1, n);
