@@ -13,13 +13,13 @@ void recursiveInsertionSort(int arr[], int n){
 		return;
 	}
 	recursiveInsertionSort(arr, n-1);
-	int key = arr[n-1];
+	int min = arr[n-1];
 	int a = n-2;
-	while(a >= 0 && arr[a] > key){
+	while(a >= 0 && arr[a] > min){
 		arr[a+1] = arr[a];
 		a--;
 	}
-	arr[a+1] = key;
+	arr[a+1] = min;
 }
 
 int main(){
