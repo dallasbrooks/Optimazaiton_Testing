@@ -1,4 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define N 25
 
 void printArray(int arr[], int n);
 
@@ -14,12 +18,15 @@ int binarySearch(int arr[], int l, int r, int x){
 }
 
 int main(){
-	int arr[] = {2, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 25, 26, 27, 29, 30};
-	int arr_length = sizeof(arr)/sizeof(arr[0]);
-	int x = 18;
-	printArray(arr, arr_length);
+	srand(time(NULL));
+	int arr[N] = {0};
+	for(int a = 0; a < N; a++){
+		arr[a] = a;
+	}
+	int x = arr[rand()%N];
+	printArray(arr, N);
 	printf("Looking for %d\n", x);
-	int idx = binarySearch(arr, 0, arr_length-1, x);
+	int idx = binarySearch(arr, 0, N-1, x);
 	if(idx != -1){
 		printf("Found %d at index %d\n", x, idx);
 	}else{

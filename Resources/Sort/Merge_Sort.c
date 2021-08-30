@@ -1,4 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define N 25
+#define M 250
 
 void printArray(int arr[], int n);
 void merge(int arr[], int l, int m, int r);
@@ -14,11 +19,14 @@ void mergeSort(int arr[], int l, int r){
 }
 
 int main(){
-	int arr[] = {21, 26, 13, 5, 29, 6, 12, 9, 20, 19, 14, 17, 15, 22, 18, 24, 27, 4, 16, 30, 2, 7, 25, 11, 10};
-	int arr_length = sizeof(arr)/sizeof(arr[0]);
-	printArray(arr, arr_length);
-	mergeSort(arr, 0, arr_length-1);
-	printArray(arr, arr_length);
+	srand(time(NULL));
+	int arr[N] = {0};
+	for(int a = 0; a < N; a++){
+		arr[a] = rand()%M;
+	}
+	printArray(arr, N);
+	mergeSort(arr, 0, N-1);
+	printArray(arr, N);
 	return 0;
 }
 
