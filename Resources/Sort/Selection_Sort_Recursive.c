@@ -18,9 +18,7 @@ void recursiveSelectionSort(int arr[], int n){
 			min = a;
 		}
 	}
-	if(min != 0){
-		swap(&arr[0], &arr[min]);
-	}
+	swap(&arr[0], &arr[min]);
 	recursiveSelectionSort(arr+1, n-1);
 }
 
