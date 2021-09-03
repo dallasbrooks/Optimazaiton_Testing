@@ -7,11 +7,11 @@
 
 void printArray(int arr[], int n);
 
-int recursiveLinearSearch(int arr[], int n, int idx, int x){
-    if(idx >= n){
+int recursiveLinearSearch(int arr[], int n, int k, int x){
+    if(k >= n){
         return -1;
     }
-    return arr[idx] == x ? idx : recursiveLinearSearch(arr, n, idx+1, x);
+    return arr[k] == x ? k : recursiveLinearSearch(arr, n, k+1, x);
 }
 
 int main(){
