@@ -9,7 +9,7 @@ void printArray(int arr[], int n);
 void swap(int *a, int *b);
 
 void recursiveInsertionSort(int arr[], int n){
-	if(n <= 0){
+	if(n <= 1){
 		return;
 	}
 	recursiveInsertionSort(arr, n-1);
