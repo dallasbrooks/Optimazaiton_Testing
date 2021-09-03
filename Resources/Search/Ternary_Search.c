@@ -17,13 +17,7 @@ int ternarySearch(int arr[], int l, int r, int x){
 	}else if(arr[m2] == x){
 		return m2;
 	}
-	if(x < arr[m1]){
-		return ternarySearch(arr, l, m1-1, x);
-	}else if(x > arr[m2]){
-		return ternarySearch(arr, m2+1, r, x);
-	}else{
-		return ternarySearch(arr, m1+1, m2-1, x);
-	}
+  return x < arr[m1] ? ternarySearch(arr, l, m1-1, x) : x > arr[m2] ? ternarySearch(arr, m2+1, r, x) : ternarySearch(arr, m1+1, m2-1, x);
 }
 
 int main(){
