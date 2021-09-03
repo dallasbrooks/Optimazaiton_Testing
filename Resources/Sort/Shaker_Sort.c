@@ -25,9 +25,9 @@ void shakerSort(int arr[], int n){
         }
         swapped = 0;
         end--;
-        for(int a = end-1; a >= start; a--){
-            if(arr[a] > arr[a+1]){
-                swap(&arr[a], &arr[a+1]);
+        for(int a = end; a > start; a--){
+            if(arr[a] < arr[a-1]){
+                swap(&arr[a], &arr[a-1]);
                 swapped = 1;
             }
         }
