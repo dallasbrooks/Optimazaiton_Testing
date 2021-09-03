@@ -38,33 +38,25 @@ void printArray(int arr[], int n){
 }
 
 void merge(int arr[], int l, int m, int r){
-	int Ln = m - l + 1;
+  int Ln = m - l + 1;
 	int Rn = r - m;
 	int L[Ln];
 	int R[Rn];
-	for(int a = 0; a < Ln; a++){
-		L[a] = arr[l + a];
-	}
-	for(int a = 0; a < Rn; a++){
-		R[a] = arr[m + 1 + a];
+	for(int a = 0; a < Ln || a < Rn; a++){
+	    if(a < Ln){
+	        L[a] = arr[l + a];
+	    }
+	    if(a < Rn){
+	        R[a] = arr[m + 1 + a];
+	    }
 	}
 	int ll = 0;
 	int rr = 0;
 	for(int a = l; a < l+r+1; a++){
-		if(ll < Ln && rr < Rn){
-			if(L[ll] <= R[rr]){
-				arr[a] = L[ll];
-				ll++;
-			}else{
-				arr[a] = R[rr];
-				rr++;
-			}
-		}else if(ll < Ln){
-			arr[a] = L[ll];
-			ll++;
-		}else if(rr < Rn){
-			arr[a] = R[rr];
-			rr++;
-		}
+	    if(ll < Ln && rr < Rn){
+	        arr[a] = L[ll] <= R[rr] ? L[ll++] : R[rr++];
+	    }else if(ll < Ln || rr < Rn){
+	        arr[a] = ll < Ln ? L[ll++] : R[rr++];
+	    }
 	}
 }
